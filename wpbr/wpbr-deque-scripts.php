@@ -8,7 +8,10 @@
  
 function wpbr_dequeue_style() {
 	global $pagenow;
-	var_dump($_GET['page']);
+	
+	// uncomment the next line during testing to see the value of the current page
+	// var_dump($_GET['page']);
+	
 	if( in_array( $pagenow, array('admin.php') ) && ( $_GET['page'] == 'wpml-string-translation/menu/string-translation.php' ) ) {
     	wp_dequeue_style( 'wpbr-admin-main-styles' );
     }
